@@ -1,33 +1,53 @@
-# Movies List
+# Movies List With Details
 
 ## What is this demo?
-    In this demo List of objects id coverd in Dart and ListView in Flutter.
+   This demo will show the students how to navigate between pages in Flutter and pass data. 
 
 ## What are the objectives?
-    The student must learn how to create a list of objects and view them in a Flutter app.
+    Students will be able to navigate in app and pass data along the pages.
 
 ## Steps
+### Part 1: Navigating between pages 
+1. Create a new file in pages folder called movie details
+2. Create a widget inside it 
+3. Add a title and an image and rating (use static data)
+4. Add `flutter pub add go_router`
+5. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
+6. Define the routes you have 
+``` dart 
+final _router = GoRouter(
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => MoviesList(),
+      ),
+      GoRoute(
+        path: '/movie',
+        builder: (context, state) => MoviePage(),
+      ),
+    ],
+  );
+  ```
+7. Modify MaterialApp to this 
+``` dart 
+@override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+        routeInformationParser: _router.routeInformationParser,
+        routerDelegate: _router.routerDelegate,
+      );
+  }
+  ```
+8. Add an Inkwell on the Containers in the movieList
+9. Add in the on tap function ` context.push("/ROUTE_YOU_WANT");` 
 
-### Part 1: Dart Lists
-1. Create a model folder
-2. Create Class Movies with `name,image,rating`
-3. Create a constructor 
-4. Make properties required 
-5. Create an assets folder and add images to it
-6. Add it to pubspec.yaml
-7. Create a static List of movies 
-8. Create a main function 
-9. Loop through them and print in console
+### Part 2: Passing Data
+1. Now lets pass the correct movie to the other page
+2. in MovieDetails page create a movie variable that is initially empty (before your build)
+3. Fix the Constructor Cmd+.
+4. in List widget pass the movie as an extra `context.push("/ROUTE_YOU_WANT",extra : Movie.movies[index]);`
+5. Go to Main to fix the error by fixing the GoRouter and adding this in the movie route ` builder: (context, state) => MoviePage(movie: state.extra as Movie),`
+6. Fix the movieDetails page by adding all the values from the movie 
 
-### Part 2: Flutter ListView
-1.  Create a pages folder in lib folder 
-2.  Create a file called MovieList and make it a widget
-3.  Add a Scaffold and an App bar 
-4.  Add it to main to test
-5.  Add body to Scaffold and add ListView.builder
-6.  Add itemCount
-7.  Add `(context, index){}` function
-8.  Return a Card with `Text(Movie.movies[0].name)` 
-9.  See how many times its repeted! its how long movies list is!
-10. Replace 0 with index
-11. Add images 
+
+### 
