@@ -11,9 +11,10 @@
 1. Create a new file in pages folder called movie details
 2. Create a widget inside it 
 3. Add a title and an image and rating (use static data)
-4. Add `flutter pub add go_router`
-5. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
-6. Define the routes you have 
+4. Check how it looks like by adding it in main
+5. Add `flutter pub add go_router`
+6. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
+7. Define the routes you have 
 ``` dart 
 final _router = GoRouter(
     routes: [
