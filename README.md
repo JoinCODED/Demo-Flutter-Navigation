@@ -9,12 +9,45 @@
 ## Steps
 ### Part 1: Navigating between pages 
 1. Create a new file in pages folder called movie details
-2. Create a widget inside it 
-3. Add a title and an image and rating (use static data)
-4. Check how it looks like by adding it in main
-5. Add `flutter pub add go_router` and talk about lobraries
-6. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
-7. Define the routes you have 
+2. Paste this 
+```dart 
+import 'package:flutter/material.dart';
+
+import '../models/movies.dart';
+
+class MovieDetail extends StatelessWidget {
+  const MovieDetail({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Harry potter"),
+        backgroundColor: Colors.red,
+        elevation: 0,
+      ),
+      body: Center(
+        child: Column(children: [
+          Image.asset(
+            "assets/harrypotter.jpeg",
+            width: 300,
+            height: 400,
+            fit: BoxFit.contain,
+          ),
+          Container(
+              margin: EdgeInsets.all(15),
+              child: Text("Rating: 5", style: TextStyle(fontSize: 25)))
+        ]),
+      ),
+    );
+  }
+}
+```
+4. Add a title and an image and rating (use static data)
+5. Check how it looks like by adding it in main
+6. Add `flutter pub add go_router` and talk about lobraries
+7. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
+8. Define the routes you have 
 ``` dart 
 final _router = GoRouter(
     routes: [
