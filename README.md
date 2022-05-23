@@ -43,9 +43,8 @@ class MovieDetail extends StatelessWidget {
   }
 }
 ```
-4. Add a title and an image and rating (use static data)
 5. Check how it looks like by adding it in main
-6. Add `flutter pub add go_router` and talk about lobraries
+6. Add `flutter pub add go_router` and go to yaml file talk about libraries
 7. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
 8. Define the routes you have 
 ``` dart 
