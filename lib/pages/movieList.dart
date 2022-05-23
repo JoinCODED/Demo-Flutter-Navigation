@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movies_list/models/movies.dart';
+import 'package:go_router/go_router.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({Key? key}) : super(key: key);
@@ -16,23 +17,29 @@ class MoviesList extends StatelessWidget {
       body: ListView.builder(
           itemCount: Movie.movies.length,
           itemBuilder: (context, index) {
-            return Container(
-              height: 100,
-              child: Card(
-                margin: EdgeInsets.only(right: 10, left: 10, top: 5),
-                elevation: 0,
-                child: Row(
-                  children: [
-                    Image.asset(Movie.movies[index].image),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        Movie.movies[index].name,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+            return InkWell(
+              onTap: () {
+                GoRouter.of(context)
+                    .push('/details', extra: Movie.movies[index]);
+              },
+              child: Container(
+                height: 100,
+                child: Card(
+                  margin: EdgeInsets.only(right: 10, left: 10, top: 5),
+                  elevation: 0,
+                  child: Row(
+                    children: [
+                      Image.asset(Movie.movies[index].image),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          Movie.movies[index].name,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             );
