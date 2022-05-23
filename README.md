@@ -8,9 +8,11 @@
 
 ## Steps
 ### Part 1: Navigating between pages 
-1. Go through the house metaphore example
-2. Create a new file in pages folder called movie details
-3. Paste this 
+1. Go through the![Untitled_1](https://user-images.githubusercontent.com/52189918/169860043-73d6ddae-19c4-437b-ba68-be426ffb72ac.jpg)
+ house metaphore example
+2. 
+3. Create a new file in pages folder called movie details
+4. Paste this 
 ```dart 
 import 'package:flutter/material.dart';
 
