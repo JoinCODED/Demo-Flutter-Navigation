@@ -8,8 +8,9 @@
 
 ## Steps
 ### Part 1: Navigating between pages 
-1. Create a new file in pages folder called movie details
-2. Paste this 
+1. Go through the house metaphore example
+2. Create a new file in pages folder called movie details
+3. Paste this 
 ```dart 
 import 'package:flutter/material.dart';
 
@@ -46,7 +47,7 @@ class MovieDetail extends StatelessWidget {
 5. Check how it looks like by adding it in main
 6. Add `flutter pub add go_router` and go to yaml file talk about libraries
 7. In main outside build at the end of the class create a instance of the router ` final _router = GoRouter();`
-8. Define the routes you have ( emphasis on GoRouter and GoRoute diffrence) 
+8. Define the routes you have ( emphasis on GoRouter and GoRoute diffrence) mentioning that GoRoute is going to a scaffold widget
 ``` dart 
 final _router = GoRouter(
     routes: [
@@ -76,7 +77,7 @@ final _router = GoRouter(
 10. Add in the on tap function ` context.push("/ROUTE_YOU_WANT");` 
 
 ### Part 2: Passing Data
-1. Now lets pass the correct movie to the other page
+1. Now lets pass the correct movie to the other page Mentinoing the objective of transferring data 
 2. in MovieDetails page create a movie variable that is initially empty (before your build)
 3. Fix the Constructor Cmd+.
 4. in List widget pass the movie as an extra `context.push("/ROUTE_YOU_WANT",extra : Movie.movies[index]);`
