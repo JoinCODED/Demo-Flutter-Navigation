@@ -19,7 +19,7 @@
 final _router = GoRouter(
     routes: [
       GoRoute(
-        path: '/',
+        path: '/', // this is the root page 
         builder: (context, state) => MoviesList(),
       ),
       GoRoute(
@@ -40,7 +40,8 @@ final _router = GoRouter(
   }
   ```
 8. Add an Inkwell on the Containers in the movieList
-9. Add in the on tap function ` context.push("/ROUTE_YOU_WANT");` 
+9. Import GoRouter in Detail page
+10. Add in the on tap function ` context.push("/ROUTE_YOU_WANT");` 
 
 ### Part 2: Passing Data
 1. Now lets pass the correct movie to the other page
